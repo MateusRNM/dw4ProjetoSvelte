@@ -88,8 +88,12 @@
 </div>
 
 <style>
+    @font-face {
+        font-family: Imp;
+        src: url('../../lib/assets/impact.ttf')
+    }
     * {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family: Imp;
     }
     h1 {
         margin-top: 1%;
@@ -232,8 +236,12 @@
     }
 
     @media(max-width: 960px) {
+        @font-face {
+            font-family: Imp;
+            src: url('../../lib/assets/impact.ttf')
+        }
         * {
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-family: Imp;
         }
         h1 {
             margin-top: 1%;
