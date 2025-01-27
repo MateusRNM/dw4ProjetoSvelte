@@ -93,7 +93,7 @@
         color: white;
     }
 
-    @media(max-width: 1500px) {
+    @media(max-width: 1600px) {
         @font-face {
             font-family: Imp;
             src: url('../../lib/assets/impact.ttf')
