@@ -11,7 +11,7 @@ export const moedas = [
     { nome: 'Dólar das Bahamas', value: 'BSD' }, { nome: 'Boliviano', value: 'BOB' }, { nome: 'Dólar de Brunei', value: 'BND' },
     { nome: 'Dólar de Barbados', value: 'BBD' }, { nome: 'Dirham dos Emirados', value: 'AED' }, { nome: 'Dinar Kuwaitiano', value: 'KWD' },
     { nome: 'Won Sul-Coreano', value: 'KRW' }, { nome: 'Dólar de Trinidad', value: 'TTD' }, { nome: 'Dinar Tunisiano', value: 'TND' },
-    { nome: 'Nova Lira Turca', value: 'TRY' }, { nome: 'Bolívar Venezuelano', value: 'VES' }, { nome: '', value: '' },
+    { nome: 'Nova Lira Turca', value: 'TRY' }, { nome: 'Bolívar Venezuelano', value: 'VES' }, { nome: 'Hryvnia ucraniano', value: 'UAH' },
     { nome: 'Dólar do Caribe Oriental', value: 'XCD' }, { nome: 'Taka de Bangladesh', value: 'BDT' }, { nome: 'Rand Sul-Africano', value: 'ZAR' },
     { nome: 'Dólar Zimbabuense', value: 'ZWL' }, { nome: 'Riyal Iemenita', value: 'YER' }, { nome: 'Dólar Taiuanês', value: 'TWD' },
     { nome: 'Libra Síria', value: 'SYP' }, { nome: 'Dólar de Cingapura', value: 'SGD' }, { nome: 'Coroa Sueca', value: 'SEK' },
