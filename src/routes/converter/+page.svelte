@@ -25,9 +25,9 @@
         const convertConst = coinData.conversion_rates[selectValue2]
         
         if(n == 1){
-            value2 = (value1 * convertConst).toFixed(2)
+            value2 = (value1 * convertConst).toFixed(3)
         } else {
-            value1 = (value2 / convertConst).toFixed(2)
+            value1 = (value2 / convertConst).toFixed(3)
         }
     }
     
@@ -212,5 +212,161 @@
     }
     .item-selected {
         background-color: gold;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(1) translateX(-50%);
+        }
+
+        100% {
+            transform: scale(1.05) translateX(-50%);
+        }
+    }
+    .button:hover {
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        color: white;
+    }
+
+    @media(max-width: 960px) {
+        * {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        h1 {
+            margin-top: 1%;
+        }
+        p {
+            visibility: hidden;
+        }
+        .button {
+            position: relative;
+            left: 20%;
+            top: 20%;
+            border: none;
+            box-shadow: 5px 5px 5px chartreuse;
+            border-radius: 6px;
+            width: 40%;
+            height: 20%;
+            margin-left: 10%;
+        }
+        #topBar {
+            background-color: chartreuse;
+            height: 10vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            border: 2px black solid;
+        }
+        .box {
+            position: absolute;
+            width: 90%;
+            height: 60%;
+            top: 45%;
+            left: 50%;
+            border: 5px black solid;
+            transform: translate(-50%, -50%);
+            padding: 1%;
+            border-radius: 8px;
+            box-shadow: 10px 5px 5px chartreuse;
+        }
+        .currencyBox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .currency {
+            position: relative;
+            top: 20%;
+            left: 1%;
+            width: 46%;
+            height: 50%;
+            border: 3px black solid;
+            padding: 1%;
+            border-radius: 8px;
+        }
+        .valueInput {
+            border: 3px black solid;
+            padding: 1%;
+            border-radius: 8px;
+            text-align: center;
+            width: 80%;
+            color: black;
+        }
+        .dropdown {
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+        }
+        .dropdown:hover .dropdown-list {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown-select {
+            padding: 2%;
+            border-radius: 4px;
+            background-color: white;
+            border: 3px black solid;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .dropdown-list {
+            border-radius: 4px;
+            border: 3px black solid;
+            background-color: white;
+            margin-top: 1.5%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+            overflow: auto;
+            width: 100%;
+            height: 10rem;
+        }
+        .dropdown-list-item {
+            padding-left: 2%;
+            padding-top: 2%;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s linear;
+        }
+        .dropdown-list-item:hover {
+            padding-left: 4%;
+            background-color: chartreuse;
+        }
+        .select {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .item-selected {
+            background-color: gold;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translateX(-50%);
+            }
+
+            100% {
+                transform: scale(1.05) translateX(-50%);
+            }
+        }
+        .button:hover {
+            animation-name: pulse;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            color: white;
+        }
     }
 </style>

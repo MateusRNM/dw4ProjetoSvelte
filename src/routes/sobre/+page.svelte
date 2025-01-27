@@ -71,4 +71,100 @@
         margin-left: 50%;
         transform: translateX(-50%);
     }
+    @keyframes pulse {
+        0% {
+            transform: scale(1) translateX(-50%);
+        }
+
+        100% {
+            transform: scale(1.05) translateX(-50%);
+        }
+    }
+    .button:hover {
+        animation-name: pulse;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        color: white;
+    }
+
+    @media(max-width: 1500px) {
+        * {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        h1 {
+            margin-top: 1%;
+        }
+        h2 {
+            position: absolute;
+            top: 32%;
+            left: 50%;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 20%;
+            left: 50%;
+            border: 4px black solid;
+            border-radius: 200px;
+            box-shadow: 0px 0px 5px 5px chartreuse;
+        }
+        #topBar {
+            background-color: chartreuse;
+            height: 10vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            border: 2px black solid;
+        }
+        #infoBox {
+            position: absolute;
+            width: 95%;
+            height: 70%;
+            top: 55%;
+            left: 50%;
+            border: 5px black solid;
+            transform: translate(-50%, -50%);
+            padding: 2%;
+            border-radius: 8px;
+            box-shadow: 10px 5px 5px chartreuse;
+        }
+        .text { 
+            font-size: 20px;
+            position: absolute;
+            top: 44%;
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%);
+        }
+        .button {
+            position: relative;
+            border: none;
+            box-shadow: 5px 5px 5px chartreuse;
+            border-radius: 6px;
+            width: 40%;
+            height: 10%;
+            top: 67%;
+            transform: translateX(-50%);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translateX(-50%);
+            }
+
+            100% {
+                transform: scale(1.05) translateX(-50%);
+            }
+        }
+        .button:hover {
+            animation-name: pulse;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            color: white;
+        }
+    }
 </style>
