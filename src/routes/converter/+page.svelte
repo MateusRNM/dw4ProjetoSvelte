@@ -81,8 +81,8 @@
             </div>
         </div>
 
-        <button class="button" style="background-color: gold;" onclick={() => goto("/")}>VOLTAR AO INÍCIO</button><br>
-        <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/sobre")}>SOBRE O AUTOR</button>
+        <button class="button" style="background-color: gold;" onclick={() => goto("/dw4PojetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
+        <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/dw4PojetoSvelte/sobre")}>SOBRE O AUTOR</button>
 
     </div>
 </div>

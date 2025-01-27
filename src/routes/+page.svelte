@@ -8,8 +8,8 @@
 
 <div class="textBox">
     <center><p class="text">Faça conversão de moedas automaticamente. Valores sempre atualizados.</p></center>
-    <button class="button" style="background-color: gold;" onclick={() => goto("./converter")}>CONVERTER</button><br>
-    <button class="button" style="background-color: cyan;" onclick={() => goto("./sobre")}>SOBRE O AUTOR</button>
+    <button class="button" style="background-color: gold;" onclick={() => goto("/dw4PojetoSvelte/converter")}>CONVERTER</button><br>
+    <button class="button" style="background-color: cyan;" onclick={() => goto("/dw4PojetoSvelte/sobre")}>SOBRE O AUTOR</button>
 </div>
 
 <style>
