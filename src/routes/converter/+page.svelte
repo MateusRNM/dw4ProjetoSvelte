@@ -1,5 +1,5 @@
 <script>
-    import { request, moedas } from '$lib/awesomeAPI.js';
+    import { request, moedas } from '$lib/exchangerateAPI.js';
     import { goto } from '$app/navigation';
 
     let value1 = $state(null)
@@ -206,7 +206,9 @@
         background-color: chartreuse;
     }
     .select {
-        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .item-selected {
         background-color: gold;
