@@ -16,6 +16,9 @@ export const moedas = [
     { nome: 'Dólar Zimbabuense', value: 'ZWL' }, { nome: 'Riyal Iemenita', value: 'YER' }, { nome: 'Dólar Taiuanês', value: 'TWD' },
     { nome: 'Libra Síria', value: 'SYP' }, { nome: 'Dólar de Cingapura', value: 'SGD' }, { nome: 'Coroa Sueca', value: 'SEK' },
     { nome: 'Dinar do Bahrein', value: 'BHD' }, { nome: 'Dólar Neozelandês', value: 'NZD' }, { nome: 'Dólar de Hong Kong', value: 'HKD' },
+    { nome: 'Franco da Guiné', value: 'GNF' }, { nome: 'Rupia indonésia', value: 'IDR' }, { nome: 'Dólar das Ilhas Cayman', value: 'KYD' },
+    { nome: 'Tenge', value: 'KZT' }, { nome: 'Kip', value: 'LAK' }, { nome: 'Rupia do Sri Lanka', value: 'LKR' },
+    { nome: 'Dólar liberiano', value: 'LRD' }, { nome: 'Dinar líbio', value: 'LYD' }, { nome: 'Dirham marroquino', value: 'MAD' },
 ]
 
 

@@ -18,7 +18,7 @@
     
     <center>
         {#each moedas as moeda}
-            <a class="text" target="_blank" href={`https://www.google.com/search?q=${moeda.nome.replace(' ', '+')}`}>{moeda.nome}</a><br>
+            <a class="text" target="_blank" href={`https://www.google.com/search?q=${moeda.nome.replace(' ', '+')}+${moeda.value}`}>{moeda.nome}</a><br>
         {/each}
     </center>
 </div>
