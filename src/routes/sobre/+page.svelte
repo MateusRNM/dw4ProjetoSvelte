@@ -11,7 +11,7 @@
     <img src={img} alt="" />
     <center><h2>Mateus Ribeiro Neves Martins</h2></center>
     <center><p class="text">Estudante de informática no IFMS-TL. <br> Gosto de jogos, programação, música, RPG e entre outras coisas.</p></center>
-    <button class="button" style="background-color: gold;" onclick={() => goto("/dw4PojetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
+    <button class="button" style="background-color: gold;" onclick={() => goto("/dw4ProjetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
 </div>
 
 <style>

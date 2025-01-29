@@ -25,9 +25,9 @@
         const convertConst = coinData.conversion_rates[selectValue2]
         
         if(n == 1){
-            value2 = (value1 * convertConst).toFixed(3)
+            value2 = (value1 * convertConst).toFixed(2)
         } else {
-            value1 = (value2 / convertConst).toFixed(3)
+            value1 = (value2 / convertConst).toFixed(2)
         }
     }
     
@@ -39,6 +39,7 @@
 
 <div class="box">
     <div class="currencyBox">
+        
         <div class="currency">
             <center><h2>{selectValue1}</h2></center>
             <center><input class="valueInput" type="numeric" bind:value={value1} onchange={() => convert(1)}></center>
@@ -81,8 +82,8 @@
             </div>
         </div>
 
-        <button class="button" style="background-color: gold;" onclick={() => goto("/dw4PojetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
-        <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/dw4PojetoSvelte/sobre")}>SOBRE O AUTOR</button>
+        <button class="button" style="background-color: gold;" onclick={() => goto("/dw4ProjetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
+        <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/dw4ProjetoSvelte/sobre")}>SOBRE O AUTOR</button>
 
     </div>
 </div>

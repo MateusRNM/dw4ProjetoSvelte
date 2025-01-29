@@ -1,38 +1,11 @@
-# sv
+# Projeto
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Este projeto se trata de um conversor de moedas feito com SvelteKit e a ExchangeRate-API (https://www.exchangerate-api.com) para realizar as conversões. Ele conta com várias moedas e 3 páginas: 
+Página principal, com botões que redirecionam para as outras duas páginas e uma lista de todas as moedas disponíveis; 
+Página do conversor, que inclui a função do site em si (converter moedas) e botões para as outras duas páginas;
+Página sobre, que tem uma breve descrição sobre mim e um botão para redirecionar para a página principal;
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Desenvolvimento
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Essa página foi desenvolvida utilizando as ferramentas do SvelteKit, CSS, HTML e JS. Sua parte mais trabalhosa foi estilizar a página de uma maneira visualmente agradável com CSS, contando até com uma responsividade básica (talvez não tão precisa a depender do aparelho) para aparelhos móveis.
