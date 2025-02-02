@@ -106,14 +106,14 @@
         }
         h2 {
             position: absolute;
-            top: 32%;
+            top: 27%;
             left: 50%;
         }
         img {
             width: 100px;
             height: 100px;
             position: relative;
-            top: 20%;
+            top: 15%;
             left: 50%;
             border: 4px black solid;
             border-radius: 200px;
@@ -135,14 +135,14 @@
             left: 50%;
             border: 5px black solid;
             transform: translate(-50%, -50%);
-            padding: 2%;
+            padding: 1%;
             border-radius: 8px;
             box-shadow: 10px 5px 5px chartreuse;
         }
         .text { 
             font-size: 20px;
             position: absolute;
-            top: 44%;
+            top: 40%;
             left: 50%;
             text-align: center;
             transform: translateX(-50%);

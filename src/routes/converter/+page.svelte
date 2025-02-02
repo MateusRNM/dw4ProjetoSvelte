@@ -309,7 +309,7 @@
             top: 120%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
+            width: 88%;
         }
         .dropdown:hover .dropdown-list {
             opacity: 1;
@@ -331,7 +331,6 @@
             border-radius: 4px;
             border: 3px black solid;
             background-color: white;
-            margin-top: 1.5%;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.2s linear, visibility 0.2s linear;
@@ -340,16 +339,21 @@
             height: 10rem;
         }
         .dropdown-list-item {
-            padding-left: 2%;
+            padding-left: 1%;
             padding-top: 2%;
+            margin-top: 6%;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
             font-size: 16px;
             cursor: pointer;
             background-color: white;
-            border-radius: 4px;
+            border-radius: 0px;
+            text-align: center;
             transition: background-color 0.3s linear;
+            width: 100%;
         }
         .dropdown-list-item:hover {
-            padding-left: 4%;
+            padding-left: 1%;
             background-color: chartreuse;
         }
         .select {
