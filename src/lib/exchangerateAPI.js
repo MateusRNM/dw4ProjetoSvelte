@@ -23,7 +23,7 @@ export const moedas = [
 
 
 export async function request(args){
-    const response = await fetch(`https://v6.exchangerate-api.com/v6/0e6e826b60052f4138211038/latest/${args}`)
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/ce531db59bbf57d7f539f7fd/latest/${args}`)
     const data = await response.json()
     return data.result == 'success' ? data : alert("Erro: " + data["error-type"])
 }
