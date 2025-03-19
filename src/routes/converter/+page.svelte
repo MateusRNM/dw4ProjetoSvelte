@@ -2,6 +2,8 @@
     import { request, moedas } from '$lib/exchangerateAPI.js';
     import { goto } from '$app/navigation';
 
+    const meses = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
     let value1 = $state(null)
     let value2 = $state(null)
     let selectValue1 = $state('')
@@ -15,7 +17,7 @@
         }
 
         coinData = await request(selectValue1)
-        dataCot = coinData.time_last_update_utc
+        dataCot = formatarData(coinData.time_last_update_utc)
         convert(1)
     }
 
@@ -45,6 +47,44 @@
         selectValue1 = selectValue2
         selectValue2 = temp
         makeRequest()
+    }
+
+    function formatarData(dataOriginal){
+        let dataFinal = ""
+        dataOriginal = dataOriginal.split(' ')
+        dataOriginal[0] = dataOriginal[0].replace(',', '')
+        dataOriginal[5] = "UTC"
+        console.log(dataOriginal)
+        let mes = 0
+        let dia = ""
+        for(let i = 0; i < meses.length; i++){
+            if(meses[i] == dataOriginal[2]){
+                mes = i+1
+                break
+            }
+        }
+        if(mes < 10){
+            mes = "0" + String(mes)
+        }
+
+        if(dataOriginal[0] == "Mon"){
+            dia = "Segunda-feira"
+        } else if(dataOriginal[0] == "Tue"){
+            dia = "Terça-feira"
+        } else if(dataOriginal[0] == "Wed"){
+            dia = "Quarta-feira"
+        } else if(dataOriginal[0] == "Thu"){
+            dia = "Quinta-feira"
+        } else if(dataOriginal[0] == "Fri"){
+            dia = "Sexta-feira"
+        } else if(dataOriginal[0] == "Sat"){
+            dia = "Sábado"
+        } else {
+            dia = "Domingo"
+        }
+
+        dataFinal = `${dia}, ${dataOriginal[1]}/${mes}/${dataOriginal[3]} - ${dataOriginal[4]} ${dataOriginal[5]}`
+        return dataFinal
     }
     
 </script>
@@ -121,6 +161,7 @@
         position: absolute;
         top: 95%;
         left: 1%;
+        color: black;
     }
     .button {
         position: relative;
@@ -282,11 +323,12 @@
         span{
             font-size: 16px;
             position: absolute;
-            top: 76%;
+            top: 75%;
             left: 50%;
             transform: translate(-50%, 0);
             margin-top: 1%;
             margin-bottom: 1%;
+            color: black;
         }
         .button {
             position: relative;
@@ -433,6 +475,11 @@
             animation-name: none;
             transform: scale(1.1) translate(-50%, -50%);
             color: gold;
+        }
+        img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
         }
     }
 </style>
