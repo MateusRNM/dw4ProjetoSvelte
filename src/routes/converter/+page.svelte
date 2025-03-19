@@ -157,7 +157,6 @@
         </div>
         
         <button class="button" style="background-color: gold;" onclick={() => goto("/dw4ProjetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
-        <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/dw4ProjetoSvelte/sobre")}>SOBRE O AUTOR</button>
     </div>
 </div>
 
@@ -183,7 +182,7 @@
     }
     .button {
         position: relative;
-        left: 40%;
+        left: 50%;
         top: 20%;
         border: none;
         box-shadow: 5px 5px 5px chartreuse;
@@ -358,14 +357,13 @@
         }
         .button {
             position: relative;
-            left: 20%;
-            top: 20%;
+            left: 50%;
+            top: 43%;
             border: none;
             box-shadow: 5px 5px 5px chartreuse;
             border-radius: 6px;
             width: 40%;
             height: 20%;
-            margin-left: 10%;
         }
         .invertButton {
             position: absolute;
@@ -378,18 +376,15 @@
             margin: 0px;
         }
         #topBar {
-            background-color: chartreuse;
-            height: 10vh;
-            width: 100%;
-            position: fixed;
-            top: 0px;
-            border: 2px black solid;
+            visibility: hidden;
+            height: 0px;
+            width: 0px;
         }
         .box {
             position: absolute;
             width: 90%;
             height: 60%;
-            top: 45%;
+            top: 35%;
             left: 50%;
             border: 5px black solid;
             transform: translate(-50%, -50%);
@@ -422,7 +417,7 @@
         }
         .dropdown {
             position: absolute;
-            top: 120%;
+            top: 131%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 88%;
