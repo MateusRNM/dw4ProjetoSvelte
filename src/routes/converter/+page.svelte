@@ -12,7 +12,7 @@
     let dataCot = $state("")
 
     async function makeRequest(){
-        if(selectValue1 == "" || selectValue2 == ""){
+        if(selectValue1 == "" || selectValue2 == "" || selectValue1 == undefined || selectValue2 == undefined){
             return
         }
 
@@ -22,7 +22,7 @@
     }
 
     function convert(n){
-        if(selectValue1 == "" || selectValue2 == ""){
+        if(selectValue1 == "" || selectValue2 == "" || selectValue1 == undefined || selectValue2 == undefined){
             return
         }
 
@@ -36,6 +36,9 @@
     }
 
     function inverterMoedas(){
+        if(selectValue1 == "" || selectValue2 == "" || selectValue1 == undefined || selectValue2 == undefined){
+            return
+        }
         let temp = value1
         value1 = value2
         value2 = temp
@@ -54,7 +57,6 @@
         dataOriginal = dataOriginal.split(' ')
         dataOriginal[0] = dataOriginal[0].replace(',', '')
         dataOriginal[5] = "UTC"
-        console.log(dataOriginal)
         let mes = 0
         let dia = ""
         for(let i = 0; i < meses.length; i++){
@@ -343,12 +345,13 @@
         }
         .invertButton {
             position: absolute;
-            left: 40%;
+            left: 50%;
             top: 85%;
             transform: translate(-50%, -50%);
-            width: fit-content;
-            height: fit-content;
-            font-size: 30px;
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            margin: 0px;
         }
         #topBar {
             background-color: chartreuse;
