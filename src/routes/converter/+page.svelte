@@ -8,6 +8,8 @@
     let value2 = $state(null)
     let selectValue1 = $state('')
     let selectValue2 = $state('')
+    let bandeira1 = $state('')
+    let bandeira2 = $state('')
     let coinData = $state({})
     let dataCot = $state("")
 
@@ -42,6 +44,7 @@
         let temp = value1
         value1 = value2
         value2 = temp
+
         temp = document.getElementsByClassName('select')[0].innerHTML
         document.getElementsByClassName('select')[0].innerHTML = document.getElementsByClassName('select')[1].innerHTML
         document.getElementsByClassName('select')[1].innerHTML = temp
@@ -49,6 +52,11 @@
         temp = selectValue1
         selectValue1 = selectValue2
         selectValue2 = temp
+
+        temp = bandeira1
+        bandeira1 = bandeira2
+        bandeira2 = temp
+        
         makeRequest()
     }
 
@@ -101,6 +109,9 @@
         <div class="currency">
             <center><h2>{selectValue1}</h2></center>
             <center><input class="valueInput" type="numeric" bind:value={value1} onchange={() => convert(1)}></center>
+
+            <img class="boxImg" src={bandeira1} alt="" hidden={bandeira1 == '' ? true : false}>
+
             <div class="dropdown">
                 <div class="dropdown-select">
                     <span class="select">SELECIONE UMA MOEDA</span>
@@ -110,9 +121,10 @@
                     {#each moedas as moeda}
                         <div class={selectValue1 == moeda.value ? "dropdown-list-item item-selected" : "dropdown-list-item"} value={moeda.value} onclick={(e) => { 
                             selectValue1 = e.target.value
+                            bandeira1 = moeda.bandeira
                             document.getElementsByClassName('select')[0].innerHTML = moeda.nome
                             makeRequest()
-                        }}> <img src={moeda.bandeira} alt=""> {moeda.nome}</div>
+                        }}> <img src={moeda.bandeira} alt="" value={moeda.value}> {moeda.nome}</div>
                     {/each}
                 </div>
             </div>
@@ -123,6 +135,9 @@
         <div class="currency" style="left: 55%; top: -30%;">
             <center><h2>{selectValue2}</h2></center>
             <center><input class="valueInput" type="numeric" bind:value={value2} onchange={() => convert(2)}></center>
+
+            <img class="boxImg" src={bandeira2} alt="" hidden={bandeira2 == '' ? true : false}>
+
             <div class="dropdown">
                 <div class="dropdown-select">
                     <span class="select">SELECIONE UMA MOEDA</span>
@@ -132,9 +147,10 @@
                     {#each moedas as moeda}
                         <div class={selectValue2 == moeda.value ? "dropdown-list-item item-selected" : "dropdown-list-item"} value={moeda.value} onclick={(e) => { 
                             selectValue2 = e.target.value
+                            bandeira2 = moeda.bandeira
                             document.getElementsByClassName('select')[1].innerHTML = moeda.nome
                             makeRequest()
-                        }}> <img src={moeda.bandeira} alt=""> {moeda.nome}</div>
+                        }}> <img src={moeda.bandeira} alt="" value={moeda.value}> {moeda.nome}</div>
                     {/each}
                 </div>
             </div>
@@ -311,6 +327,14 @@
         height: 50px;
         object-fit: contain;
     }
+    .boxImg {
+        position: relative;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        border: 3px black solid;
+        border-radius: 6px;
+    }
     @media(max-width: 960px) {
         @font-face {
             font-family: Imp;
@@ -483,6 +507,14 @@
             width: 45px;
             height: 45px;
             object-fit: contain;
+        }
+        .boxImg {
+            position: relative;
+            left: 50%;
+            top: 15%;
+            transform: translate(-50%, -50%);
+            border: 3px black solid;
+            border-radius: 6px;
         }
     }
 </style>
