@@ -7,6 +7,7 @@
     let selectValue1 = $state('')
     let selectValue2 = $state('')
     let coinData = $state({})
+    let dataCot = $state("")
 
     async function makeRequest(){
         if(selectValue1 == "" || selectValue2 == ""){
@@ -14,6 +15,7 @@
         }
 
         coinData = await request(selectValue1)
+        dataCot = coinData.time_last_update_utc
         convert(1)
     }
 
@@ -29,6 +31,20 @@
         } else {
             value1 = (value2 / convertConst).toFixed(2)
         }
+    }
+
+    function inverterMoedas(){
+        let temp = value1
+        value1 = value2
+        value2 = temp
+        temp = document.getElementsByClassName('select')[0].innerHTML
+        document.getElementsByClassName('select')[0].innerHTML = document.getElementsByClassName('select')[1].innerHTML
+        document.getElementsByClassName('select')[1].innerHTML = temp
+
+        temp = selectValue1
+        selectValue1 = selectValue2
+        selectValue2 = temp
+        makeRequest()
     }
     
 </script>
@@ -54,13 +70,13 @@
                             selectValue1 = e.target.value
                             document.getElementsByClassName('select')[0].innerHTML = moeda.nome
                             makeRequest()
-                        }}>{moeda.nome}</div>
+                        }}> <img src={moeda.bandeira} alt=""> {moeda.nome}</div>
                     {/each}
                 </div>
             </div>
         </div>
 
-        <p>=</p>
+        <button class="button invertButton" onclick={inverterMoedas}>⇄</button>
 
         <div class="currency" style="left: 55%; top: -30%;">
             <center><h2>{selectValue2}</h2></center>
@@ -76,22 +92,23 @@
                             selectValue2 = e.target.value
                             document.getElementsByClassName('select')[1].innerHTML = moeda.nome
                             makeRequest()
-                        }}>{moeda.nome}</div>
+                        }}> <img src={moeda.bandeira} alt=""> {moeda.nome}</div>
                     {/each}
                 </div>
             </div>
         </div>
-
+        
         <button class="button" style="background-color: gold;" onclick={() => goto("/dw4ProjetoSvelte/")}>VOLTAR AO INÍCIO</button><br>
         <button class="button" style="background-color: cyan; left: 62%; top: -0%;" onclick={() => goto("/dw4ProjetoSvelte/sobre")}>SOBRE O AUTOR</button>
-
     </div>
 </div>
 
+<span hidden={dataCot == "" ? true : false}>DATA DA ÚLTIMA COTAÇÃO: {dataCot}</span>
+
 <style>
-    @font-face {
+    @font-face{
         font-family: Imp;
-        src: url('../../lib/assets/impact.ttf')
+        src: url("../../lib/assets/impact.ttf");
     }
     * {
         font-family: Imp;
@@ -99,14 +116,11 @@
     h1 {
         margin-top: 1%;
     }
-    p {
+    span{
+        font-size: 19px;
         position: absolute;
-        font-size: 50px;
-        left: 50%;
-        top: 50%;
-        width: fit-content;
-        height: fit-content;
-        transform: translate(-50%, -50%);
+        top: 95%;
+        left: 1%;
     }
     .button {
         position: relative;
@@ -118,6 +132,15 @@
         width: 20%;
         height: 20%;
         transform: translateX(-50%);
+    }
+    .invertButton {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        font-size: 30px;
     }
     #topBar {
         background-color: chartreuse;
@@ -235,7 +258,16 @@
         animation-direction: alternate;
         color: white;
     }
-
+    .invertButton:hover {
+        animation-name: none;
+        transform: scale(1.1) translate(-50%, -50%);
+        color: gold;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
     @media(max-width: 960px) {
         @font-face {
             font-family: Imp;
@@ -247,8 +279,14 @@
         h1 {
             margin-top: 1%;
         }
-        p {
-            visibility: hidden;
+        span{
+            font-size: 16px;
+            position: absolute;
+            top: 76%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            margin-top: 1%;
+            margin-bottom: 1%;
         }
         .button {
             position: relative;
@@ -260,6 +298,15 @@
             width: 40%;
             height: 20%;
             margin-left: 10%;
+        }
+        .invertButton {
+            position: absolute;
+            left: 40%;
+            top: 85%;
+            transform: translate(-50%, -50%);
+            width: fit-content;
+            height: fit-content;
+            font-size: 30px;
         }
         #topBar {
             background-color: chartreuse;
@@ -326,6 +373,7 @@
             justify-content: space-between;
             font-size: 16px;
             cursor: pointer;
+            margin-bottom: 15%;
         }
         .dropdown-list {
             border-radius: 4px;
@@ -380,6 +428,11 @@
             animation-iteration-count: infinite;
             animation-direction: alternate;
             color: white;
+        }
+        .invertButton:hover {
+            animation-name: none;
+            transform: scale(1.1) translate(-50%, -50%);
+            color: gold;
         }
     }
 </style>

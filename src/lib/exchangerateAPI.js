@@ -1,5 +1,5 @@
 export const moedas = [
-    { nome: 'Real Brasileiro', value: 'BRL' }, { nome: 'Dólar Americano', value: 'USD' }, { nome: 'Peso Uruguaio', value: 'UYU' },
+    { nome: 'Real Brasileiro', value: 'BRL', bandeira: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/205.png' }, { nome: 'Dólar Americano', value: 'USD', bandeira: 'https://s3.static.brasilescola.uol.com.br/be/conteudo/images/estados-unidos.jpg' }, { nome: 'Peso Uruguaio', value: 'UYU' },
     { nome: 'Peso Argentino', value: 'ARS' }, { nome: 'Dólar Canadense', value: 'CAD' }, { nome: 'Peso Chileno', value: 'CLP' },
     { nome: 'Peso Colombiano', value: 'COP' }, { nome: 'Peso Cubano', value: 'CUP' }, { nome: 'Libra Esterlina', value: 'GBP' },
     { nome: 'Iene Japonês', value: 'JPY' }, { nome: 'Dólar Jamaicano', value: 'JMD' }, { nome: 'Franco Suíço', value: 'CHF' },
