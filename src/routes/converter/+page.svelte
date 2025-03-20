@@ -374,6 +374,9 @@
             height: 40px;
             font-size: 25px;
             margin: 0px;
+            color: black;
+            transition: transform 0.3s ease;
+            animation: none;
         }
         #topBar {
             visibility: hidden;
@@ -485,7 +488,23 @@
                 transform: scale(1.05) translateX(-50%);
             }
         }
-        .button:hover {
+        @keyframes click {
+            0% {
+                transform: scale(1) translate(-50%, -50%);
+                color: black;
+            }
+
+            25% {
+                transform: scale(1.1) translate(-50%, -50%);
+                color: gold;
+            }
+
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                color: black;
+            }
+        }
+        .button:hover:not(.invertButton) {
             animation-name: pulse;
             animation-duration: 0.5s;
             animation-timing-function: ease-in-out;
@@ -493,10 +512,8 @@
             animation-direction: alternate;
             color: white;
         }
-        .invertButton:hover {
-            animation-name: none;
-            transform: scale(1.1) translate(-50%, -50%);
-            color: gold;
+        .invertButton:active {
+            animation: click 0.3s ease;
         }
         img {
             width: 45px;

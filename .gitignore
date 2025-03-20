@@ -1,6 +1,8 @@
 node_modules
 android
 capacitor.config.json
+assets
+icons
 
 # Output
 .output

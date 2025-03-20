@@ -131,7 +131,7 @@
             position: absolute;
             width: 95%;
             height: 70%;
-            top: 55%;
+            top: 50%;
             left: 50%;
             border: 5px black solid;
             transform: translate(-50%, -50%);
@@ -154,7 +154,7 @@
             border-radius: 6px;
             width: 40%;
             height: 10%;
-            top: 67%;
+            top: 85%;
             transform: translateX(-50%);
         }
         @keyframes pulse {
